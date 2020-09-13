@@ -25,18 +25,23 @@ public class JpaMain {
 //            Member findMember = em.find(Member.class, 1L); // 찾기
 //            findMember.setName("HelloJPA"); 수정
 
-            List<Member> result = em.createQuery("select m from Member as m", Member.class)
-                    .getResultList();
-            // JPA에서는 테이블을 대상으로 쿼리를 짜지 않는다.  Member객체를 대상으로 쿼리
-            for (Member member : result) {
-                System.out.println("member.getName() = " + member.getName());
-            }
+//            List<Member> result = em.createQuery("select m from Member as m", Member.class)
+//                    .getResultList();
+//            // JPA에서는 테이블을 대상으로 쿼리를 짜지 않는다.  Member객체를 대상으로 쿼리
+//            for (Member member : result) {
+//                System.out.println("member.getName() = " + member.getName());
+//            }
 
 //            List<Member> result = em.createQuery("select m from Member as m", Member.class)
 //                    .setFirstResult(5)
 //                    .setMaxResults(10)
 //                    .getResultList();  // 페이지네이션도 가능
-
+//            Member member1 = new Member(10L, "spring");
+//            Member member2 = new Member(11L, "jpa");`
+//
+//            em.persist(member1);
+//            em.persist(member2);
+//            System.out.println("========== AFTER ============");
             tx.commit();
         } catch (Exception e) {
             tx.rollback();
