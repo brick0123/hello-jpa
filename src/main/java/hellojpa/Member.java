@@ -5,7 +5,7 @@ import org.hibernate.annotations.GeneratorType;
 import javax.persistence.*;
 import java.util.Date;
 
-@Entity
+//@Entity
 // @Table(name = "USER") // DB 테이블명이 다를 경우
 public class Member {
 
