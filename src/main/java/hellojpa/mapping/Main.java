@@ -39,12 +39,16 @@ public class Main {
 
             Member member = new Member();
             member.setUsername("member1");
-            member.setTeam(team);
+            member.chageTeam(team); // **
             em.persist(member);
+
+//            team.getMembers().add(member); // **
+            // 양방향 연관관계를 세팅할때는 양쪽에다 값을 세팅해야됨
+            // ** -> 연관괸계 편의 메소드를 생성하자
 //
 ////            영속성 컨텍스트 말고 DB에서 가져오는 걸 보고싶다면
-//           em.flush();  // db에 쿼리 날리고
-//           em.clear();  // 영속성 컨텍스트 초기화
+           em.flush();  // db에 쿼리 날리고
+           em.clear();  // 영속성 컨텍스트 초기화
 //
 //            Member findMember = em.find(Member.class, member.getId());
 //
