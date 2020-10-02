@@ -1,6 +1,7 @@
 package hellojpa;
 
 import hellojpa.mapping.Member;
+import org.hibernate.Hibernate;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -58,12 +59,32 @@ public class JpaMain {
 //            em.clear();
 //
 //            em.find(Movie.class, movie.getId());
+
+//            Member member = new Member();
+//            member.setUsername("user1");
+//            member.setCreatedBy("kim");
+//            member.setCreatedDate(LocalDateTime.now());
+//
+//            em.persist(member);
+
             Member member = new Member();
-            member.setUsername("user1");
-            member.setCreatedBy("kim");
-            member.setCreatedDate(LocalDateTime.now());
+            member.setUsername("hello");
 
             em.persist(member);
+
+            em.flush();
+            em.clear();
+
+//            Member findMember = em.find(Member.class, member.getId());
+            Member findMember = em.getReference(Member.class, member.getId()); // 쿼리가 안 나감
+
+//            System.out.println("findMember = " + findMember.getId());
+//            System.out.println("findMember = " + findMember.getUsername());
+            // 실제로 사용하면 쿼리가 나감.
+            // Id는 인자로 넣은거기 때문에 쿼리가 안 나가는데 username은 나감
+
+            System.out.println("findMember = " + findMember.getClass()); // Proxy
+            Hibernate.initialize(findMember); // 강제 초기화
 
             tx.commit();
         } catch (Exception e) {
