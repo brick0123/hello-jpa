@@ -15,7 +15,10 @@ public class Member extends BaseEntity{
 //    private Long teamId;
 
     // JPA에게 관계를 알려줘야함
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.EAGER) // Team 조회가 많을때 실무에서는 즉시 로딩 사용 금지!!
+    //( fetch = FetchType.LAZY) // 지연로딩 비즈니스 로직에서 Team을 거의 호출하지 않는 경우
+    // @ManyToOne, @OneToOne은 기본이 즉시 로딩
+    // @OneToMany, @ManyToMany는 기본이 지연 로딩
     @JoinColumn(name = "TEAM_ID")
     private Team team;
 
@@ -29,6 +32,10 @@ public class Member extends BaseEntity{
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public void setTeam(Team team) {
+        this.team = team;
     }
 
     public String getUsername() {
