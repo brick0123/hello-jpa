@@ -1,15 +1,12 @@
 package hellojpa;
 
-import hellojpa.mapping.Member;
-import hellojpa.mapping.Team;
-import org.hibernate.Hibernate;
+import hellojpa.cascade.Child;
+import hellojpa.cascade.Parent;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
-import java.time.LocalDateTime;
-import java.util.List;
 
 public class JpaMain {
     public static void main(String[] args) {
@@ -68,17 +65,17 @@ public class JpaMain {
 //
 //            em.persist(member);
 
-            Team team = new Team();
-            team.setName("teamA");
-            em.persist(team);
-
-            Member member = new Member();
-            member.setUsername("hello");
-            member.setTeam(team);
-            em.persist(member);
-
-            em.flush();
-            em.clear();
+//            Team team = new Team();
+//            team.setName("teamA");
+//            em.persist(team);
+//
+//            Member member = new Member();
+//            member.setUsername("hello");
+//            member.setTeam(team);
+//            em.persist(member);
+//
+//            em.flush();
+//            em.clear();
 
 //            Member findMember = em.find(Member.class, member.getId());
 //            Member findMember = em.getReference(Member.class, member.getId()); // 쿼리가 안 나감
@@ -91,7 +88,24 @@ public class JpaMain {
 //            System.out.println("findMember = " + findMember.getClass()); // Proxy
 //            Hibernate.initialize(findMember); // 강제 초기화
 
-            List<Member> result = em.createQuery("select m from Member m", Member.class).getResultList();
+//            List<Member> result = em.createQuery("select m from Member m", Member.class).getResultList();
+
+            Child child1 = new Child();
+            Child child2 = new Child();
+
+            Parent parent = new Parent();
+            parent.addChild(child1);
+            parent.addChild(child2);
+
+            em.persist(parent);
+
+            em.flush();
+            em.clear();
+
+            Parent findParent = em.find(Parent.class, parent.getId());
+            findParent.getChildList().remove(0);
+
+//            em.remove(parent); // 부모 자식 모두 삭제
 
             tx.commit();
         } catch (Exception e) {
