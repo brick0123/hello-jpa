@@ -26,6 +26,9 @@ public class Member extends BaseEntity{
 //    @JoinColumn(name = "LOCKER_ID")
 //    private Locker locker;
 
+    @Embedded
+    private Address address;
+
     public Long getId() {
         return id;
     }
@@ -48,6 +51,14 @@ public class Member extends BaseEntity{
 
     public Team getTeam() {
         return team;
+    }
+
+    public Address getAddress() {
+        return address;
+    }
+
+    public void setAddress(Address address) {
+        this.address = address;
     }
 
     public void chageTeam(Team team) {

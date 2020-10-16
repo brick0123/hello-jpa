@@ -1,0 +1,72 @@
+[33mcommit 44e0a96e86331c400733583461d2095b14ea1e04[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m)[m
+Author: 한진호 <tlfanfvk@naver.com>
+Date:   Tue Oct 6 14:18:58 2020 +0900
+
+    영속성 전이와 고아 객체
+
+[33mcommit 69f424d2013d4b9784ded93354f2aa7bfabfd97e[m
+Merge: ccd564e e06e302
+Author: 한진호 <tlfanfvk@naver.com>
+Date:   Sun Oct 4 16:31:08 2020 +0900
+
+    Merge branch 'master' of https://github.com/brick0123/ex1-hello-jpa
+
+[33mcommit ccd564e5ca8dc0491970edd1a3b8f13fc8598ed0[m
+Author: 한진호 <tlfanfvk@naver.com>
+Date:   Sun Oct 4 16:28:56 2020 +0900
+
+    즉시로딩과 지연로딩 예제
+
+[33mcommit e06e3021d75bfd558cc06777c5d9cf04420d7c8c[m
+Author: Han jinho <tlfanfvk@naver.com>
+Date:   Sun Oct 4 16:12:15 2020 +0900
+
+    Create README.md
+
+[33mcommit 913e85b70d4513a957e9d9eec0cf7e0b4abcd381[m
+Author: 한진호 <tlfanfvk@naver.com>
+Date:   Fri Oct 2 19:15:32 2020 +0900
+
+    프록시 활용 예제
+
+[33mcommit 896994f3bcc55d7895e20473bf55fb1dde8ee6f4[m
+Author: 한진호 <tlfanfvk@naver.com>
+Date:   Thu Oct 1 11:05:33 2020 +0900
+
+    Mapped Superclass - 매핑 정보 상속
+
+[33mcommit f956f935b326471ce8e0e5694ae5bb8edaffe052[m
+Author: 한진호 <tlfanfvk@naver.com>
+Date:   Thu Oct 1 10:19:24 2020 +0900
+
+    상속관계 매핑
+
+[33mcommit 093bb207ec6a6606d050e0bc65c43fd0c7ec7dfd[m
+Author: 한진호 <tlfanfvk@naver.com>
+Date:   Mon Sep 21 22:25:35 2020 +0900
+
+    양방향 매핑 수정
+
+[33mcommit 71a4c3b8df9921e82cb26ad549d0379fee94ed3f[m
+Author: 한진호 <tlfanfvk@naver.com>
+Date:   Tue Sep 15 21:07:05 2020 +0900
+
+    git rm cached .idea
+
+[33mcommit 300075e0d1d8a26555299a141699d556e22f4e3a[m
+Author: 한진호 <tlfanfvk@naver.com>
+Date:   Tue Sep 15 21:02:47 2020 +0900
+
+    단방향 연관관계와 양방향 연관관계
+
+[33mcommit 8f84bc1b21a66c72a0f891f4cf05d8a44d962c20[m
+Author: 한진호 <tlfanfvk@naver.com>
+Date:   Sun Sep 13 22:48:00 2020 +0900
+
+    엔티티 매핑
+
+[33mcommit 71ae390a90f4e38c5448dbea5bea7d2bc226854d[m
+Author: 한진호 <tlfanfvk@naver.com>
+Date:   Tue Sep 8 17:40:15 2020 +0900
+
+    Initial commit
